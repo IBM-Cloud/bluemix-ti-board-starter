@@ -4,7 +4,6 @@ bluemix-ti-board-starter
 This [project](https://github.com/IBM-Bluemix/bluemix-ti-board-starter) contains an [Energia](http://energia.nu/faqs/) sketch that connects [SimpleLink Wi-Fi CC3200 LaunchPads](http://www.ti.com/tool/cc3200-launchxl) from Texas Instruments with the [Internet of Things](https://console.ng.bluemix.net/?ace_base=true#/store/serviceOfferingGuid=8e3a9040-7ce8-4022-a36b-47f836d2b83e&fromCatalog=true) service in [IBM Bluemix](https://bluemix.net). This allows receiving sensor data from the device as well as sending commands to the device.
 
 ![alt text](https://raw.githubusercontent.com/IBM-Bluemix/bluemix-ti-board-starter/master/images/energia.png "energia")
-
 Author: Mark VanderWiele
 
 
@@ -29,17 +28,17 @@ Open the provided sketch TICC3200LP_DevOxx.ino in Energia. Change the board to C
 
 Change the following lines with your own credentials.
 
-char ssid[] = "YOURSSID";
-char password[] = "YOURNETPASSWORD";
-char organization[] = "YOUR_IOT_FOUNDATON_ORG";
-char typeId[]   = "YOUR_IOT_FOUNDATION_DEVICEID";
-char deviceId[] = "YOUR_IOT_FOUNDATION_DEVICEID";
-char authToken[] = "YOUR_IOT_FOUNDATION_AUTHTOKEN_FOR THIS DEVICE";
+- char ssid[] = "YOURSSID";
+- char password[] = "YOURNETPASSWORD";
+- char organization[] = "YOUR_IOT_FOUNDATON_ORG";
+- char typeId[]   = "YOUR_IOT_FOUNDATION_DEVICEID";
+- char deviceId[] = "YOUR_IOT_FOUNDATION_DEVICEID";
+- char authToken[] = "YOUR_IOT_FOUNDATION_AUTHTOKEN_FOR THIS DEVICE";
 
 Create or add any unique Pub/sub topics if necessary, these will get you started with the IOT_foundation.
 
-char pubtopic[] = "iot-2/evt/status/fmt/json";
-char subTopic[] = "iot-2/cmd/+/fmt/json";
+- char pubtopic[] = "iot-2/evt/status/fmt/json";
+- char subTopic[] = "iot-2/cmd/+/fmt/json";
 
 Update the timezone if necessary.
 
