@@ -64,7 +64,7 @@ int keyIndex = 0;
 
 char organization[] = "YOUR_IOT_FOUNDATON_ORG";
 
-char typeId[]   = "YOUR_IOT_FOUNDATION_DEVICEID";
+char typeId[]   = "YOUR_IOT_FOUNDATION_TYPEID";
 char pubtopic[] = "iot-2/evt/status/fmt/json";
 char subTopic[] = "iot-2/cmd/+/fmt/json";
 

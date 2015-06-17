@@ -22,6 +22,8 @@ Setup of the Energia Sketch
 
 [Download](http://energia.nu/download/) and install the Energia IDE.
 
+You also need to download and install the CC3200 drivers, for example for [Mac OS X](http://energia.nu/files/EnergiaFTDIDrivers2.2.18.zip).
+
 In order to use the current time in the provided sketch you also need to [download](http://www.pjrc.com/teensy/td_libs_Time.html) and install the Time Library into the libraries directory - see [screenshot1](https://raw.githubusercontent.com/IBM-Bluemix/bluemix-ti-board-starter/master/images/installtime1.png) and [screenshot1](https://raw.githubusercontent.com/IBM-Bluemix/bluemix-ti-board-starter/master/images/installtime2.png).
 
 Open the provided sketch TICC3200LP_DevOxx.ino in Energia. Change the board to CC3200 via the menu Tools-Board.
@@ -31,7 +33,7 @@ Change the following lines with your own credentials.
 - char ssid[] = "YOURSSID";
 - char password[] = "YOURNETPASSWORD";
 - char organization[] = "YOUR_IOT_FOUNDATON_ORG";
-- char typeId[]   = "YOUR_IOT_FOUNDATION_DEVICEID";
+- char typeId[]   = "YOUR_IOT_FOUNDATION_TYPEID";
 - char deviceId[] = "YOUR_IOT_FOUNDATION_DEVICEID";
 - char authToken[] = "YOUR_IOT_FOUNDATION_AUTHTOKEN_FOR THIS DEVICE";
 
