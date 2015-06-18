@@ -30,6 +30,13 @@ int redLedPin    = RED_LED;
 int greenLedPin  = GREEN_LED;
 int yellowLedPin = YELLOW_LED;  // message arrived - blink
 
+// system board LED 
+
+const int button2Pin = PUSH2; 
+int button2State = 0;
+const int button1Pin = PUSH1; 
+int button1State = 0;
+
 #define   IDON                "ON"
 #define   IDOFF               "IDOFF"
 
@@ -198,6 +205,10 @@ void setup() {
   digitalWrite(greenLedPin, LOW);
   pinMode(yellowLedPin, OUTPUT);
   digitalWrite(yellowLedPin, LOW);
+    
+  // initialize the pushbutton pin as an input:
+  pinMode(button1Pin, INPUT_PULLUP); 
+  pinMode(button2Pin, INPUT_PULLUP); 
   
   listNetworks();
   // attempt to connect to Wifi network:
@@ -266,6 +277,24 @@ void loop() {
     connect();
   }
 
+  // read the state of the pushbutton value:
+  button1State = digitalRead(button1Pin);
+
+  
+   // read the state of the pushbutton value:
+  button2State = digitalRead(button2Pin);
+
+  // check if the pushbutton is pressed.
+  // if it is, the buttonState is HIGH:
+  if (button2State == HIGH) {     
+    // turn LED on:    
+    digitalWrite(RED_LED, HIGH);  
+  } 
+  else {
+    // turn LED off:
+    digitalWrite(RED_LED, LOW); 
+  }
+
   // Send and receive QoS 0 message
   aJsonObject *json,*data;
   json = aJson.createObject();
@@ -284,8 +313,14 @@ void loop() {
   
   // get the network received signal strength:
   lSignalStrength = WiFi.RSSI();
-  float RSSI = lSignalStrength;
+  float RSSI = abs(lSignalStrength);
   aJson.addItemToObject(data, "RSSI", aJson.createItem(RSSI));
+
+  int value = (button1State ? 50 :0);
+  aJson.addItemToObject(data, "Button1", aJson.createItem(value));
+  
+  value = (button2State ? 50 :0);
+  aJson.addItemToObject(data, "Button2", aJson.createItem(value));
 
   Serial.print("Publishing: ");
   char* string = aJson.print(json);
