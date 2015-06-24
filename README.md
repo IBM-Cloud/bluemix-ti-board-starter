@@ -6,6 +6,12 @@ This [project](https://github.com/IBM-Bluemix/bluemix-ti-board-starter) contains
 ![alt text](https://raw.githubusercontent.com/IBM-Bluemix/bluemix-ti-board-starter/master/images/energia.png "energia")
 Author: Mark VanderWiele
 
+The sample shows how to read the following sensor data:
+- Temperature
+- Accelerometer (x, y, z coordinates)
+- Buttons 1 and 2 pressed
+- Quality of network
+
 
 Setup of the Bluemix Application
 ================================================================================
@@ -51,3 +57,7 @@ Run the Sample
 Connect your board via USB to your machine running Energia, compile the code and upload it to your board.
 
 When opening the Internet of Things dashboard of your application in Bluemix now you can see the received data when expanding the section under your registered device.
+
+You can also import the Node-RED flow from the directory "noderedflow" in your application that you created via the based on the [Internet of Things Foundation Starter](https://console.ng.bluemix.net/?ace_base=true#/store/appType=web&cloudOEPaneId=store&appTemplateGuid=iot-template&fromCatalog=true). Then you can trigger your own flows based on the events received from the board. The following screenshots shows how to trigger something when a button has been pressed.
+
+![alt text](https://raw.githubusercontent.com/IBM-Bluemix/bluemix-ti-board-starter/master/images/flow.png "flow")
